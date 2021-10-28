@@ -1,0 +1,13 @@
+---
+- hosts: production
+  user: root
+  vars:
+    - username: jp
+    - user_password: your_password
+    - public_key: ~/.ssh/jpServer.pub
+
+  roles:
+    - common
+    - user
+    - ssh
+    - ufw
