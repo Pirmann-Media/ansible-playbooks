@@ -1,0 +1,13 @@
+- name: Add apache-config
+  template: "src=config_file.conf dest=/etc/apache2/sites-available/{{ server_hostname }}.conf"
+  become: yes
+
+- name: Activates our virtualhost
+  command: a2ensite "{{ server_hostname }}.conf"
+  become: yes
+
+- name: Deactivate default virtualhost
+  command: a2dissite 000-default
+  notify:
+    - restart apache2
+  become: yes
