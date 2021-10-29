@@ -1,4 +1,4 @@
-## Prerequisits:
+## Prerequisites:
 - Ubuntu 20.04 Server with LAMP Stack (as described in this article: #TODO)
 - Domain
 
